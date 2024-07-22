@@ -9,8 +9,8 @@ class WebRequest:
 
         @app.route('/file')
         def logger_data():
-            with open(self.filename, 'r') as file_obj:
-                return file_obj.read()
+            file_obj=open(self.filename,'r')
+            return file_obj.readlines()
 
     @staticmethod
     def run(host="localhost", port=4321):
