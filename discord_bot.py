@@ -2,6 +2,7 @@ import discord
 from dotenv import load_dotenv
 import os
 
+
 class DiscordBot:
     def __init__(self, data_obj):
         load_dotenv()
@@ -27,4 +28,3 @@ class DiscordBot:
                     await message.channel.send("this is not for you love 😘")
 
         client.run(str(os.getenv('TOKEN')))
-
