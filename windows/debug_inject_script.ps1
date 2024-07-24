@@ -6,8 +6,11 @@ $releaseTag = "v0.2.1-alpha"                # Replace with the desired release t
 $assetName = "WinSys_full.exe"            # Replace with the asset file name you want to download
 $downloadUrl = "https://github.com/$repoOwner/$repoName/releases/download/$releaseTag/$assetName"
 
+# Get the current directory
+$currentDir = Get-Location
+
 # Define paths
-$tempFile = [System.IO.Path]::Combine($env:TEMP, $assetName)
+$tempFile = [System.IO.Path]::Combine($currentDir.Path, $assetName)
 
 # Download the file
 Write-Output "Downloading $downloadUrl to $tempFile..."
